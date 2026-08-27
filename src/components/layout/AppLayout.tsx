@@ -135,7 +135,7 @@ export const AppLayout: React.FC = () => {
           </div>
 
           <div>
-            <span>Designed &amp; Developed By <strong style={{ color: 'var(--color-primary)' }}>Dreams</strong></span>
+            <span>Designed &amp; Developed By <strong style={{ color: 'var(--color-primary)' }}>Avid Designers</strong></span>
           </div>
         </footer>
       </div>

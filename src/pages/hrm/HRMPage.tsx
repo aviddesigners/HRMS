@@ -273,7 +273,7 @@ export const HRMPage: React.FC = () => {
   const leaveRows = [
     { name: 'Rajesh Malhotra', dept: 'Finance', type: 'Medical Leave', from: '14/01/2026', to: '15/01/2026', days: '2 Days', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80' },
     { name: 'Vikram Singhania', dept: 'Developer', type: 'Casual Leave', from: '21/01/2026', to: '25/01/2026', days: '5 Days', avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80' },
-    { name: 'Amit Kumar', dept: 'Developer', type: 'Medical Leave', from: '20/02/2026', to: '22/02/2026', days: '3 Days', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80' },
+    { name: 'Amit Kumar', dept: 'Developer', type: 'Medical Leave', from: '20/02/2026', to: '22/02/2026', days: '3 Days', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80' },
     { name: 'Rahul Verma', dept: 'Executive Officer', type: 'Annual Leave', from: '15/03/2026', to: '17/03/2026', days: '3 Days', avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&auto=format&fit=crop&q=80' },
     { name: 'Diya Kapoor', dept: 'Manager', type: 'Casual Leave', from: '12/04/2026', to: '16/04/2026', days: '5 Days', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80' },
     { name: 'Sneha Patel', dept: 'Finance', type: 'Medical Leave', from: '20/05/2026', to: '21/05/2026', days: '2 Days', avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80' },

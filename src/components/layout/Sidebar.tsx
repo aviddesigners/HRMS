@@ -46,6 +46,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
     setCrmTab,
     dashboardTab,
     setDashboardTab,
+    financeTab,
+    setFinanceTab,
+    recruitmentTab,
+    setRecruitmentTab,
+    reportTab,
+    setReportTab,
     leaveRequests,
     projects,
     leads,
@@ -56,6 +62,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
     dashboard: true,
     crm: true,
     hrm: true,
+    finance: true,
+    recruitment: true,
+    reports: true,
     projects: false
   });
 
@@ -63,7 +72,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
     setOpenSubmenus((prev) => ({ ...prev, [menu]: !prev[menu] }));
   };
 
-  const handleNavClick = (id: string, tab?: HRMTabType, crmT?: CRMTabType, dashT?: any) => {
+  const handleNavClick = (id: string, tab?: HRMTabType, crmT?: CRMTabType, dashT?: any, finT?: any, recT?: any, repT?: any) => {
     setActiveModule(id);
     if (tab) {
       setHrmTab(tab);
@@ -73,6 +82,15 @@ export const Sidebar: React.FC<SidebarProps> = ({
     }
     if (dashT) {
       setDashboardTab(dashT);
+    }
+    if (finT) {
+      setFinanceTab(finT);
+    }
+    if (recT) {
+      setRecruitmentTab(recT);
+    }
+    if (repT) {
+      setReportTab(repT);
     }
     if (isMobileOpen) {
       setIsMobileOpen(false);
@@ -128,12 +146,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
             }}
           >
             <img
-              src="/logo.svg"
+              src="/logo.png"
               alt="Avi Designers"
               style={{
-                height: isCollapsed ? '38px' : '48px',
-                width: isCollapsed ? '42px' : 'auto',
-                maxWidth: '180px',
+                height: isCollapsed ? '36px' : '44px',
+                width: isCollapsed ? '36px' : 'auto',
+                maxWidth: isCollapsed ? '36px' : '160px',
                 objectFit: 'contain'
               }}
             />
@@ -315,73 +333,37 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   onClick={() => handleNavClick('CRM', undefined, 'contacts')}
                   style={{
                     fontSize: '0.75rem',
-                    fontWeight: activeModule === 'CRM' && (crmTab === 'contacts' || crmTab === 'clients') ? 700 : 400,
-                    color: activeModule === 'CRM' && (crmTab === 'contacts' || crmTab === 'clients') ? 'var(--color-primary)' : '#64748B',
+                    fontWeight: activeModule === 'CRM' && (crmTab === 'contacts' || crmTab === 'clients' || crmTab === 'contact-details') ? 700 : 400,
+                    color: activeModule === 'CRM' && (crmTab === 'contacts' || crmTab === 'clients' || crmTab === 'contact-details') ? 'var(--color-primary)' : '#64748B',
                     padding: '0.3rem 0',
                     cursor: 'pointer'
                   }}
                 >
-                  Contacts Grid
-                </div>
-                <div
-                  onClick={() => handleNavClick('CRM', undefined, 'contact-details')}
-                  style={{
-                    fontSize: '0.75rem',
-                    fontWeight: activeModule === 'CRM' && crmTab === 'contact-details' ? 700 : 400,
-                    color: activeModule === 'CRM' && crmTab === 'contact-details' ? 'var(--color-primary)' : '#64748B',
-                    padding: '0.3rem 0',
-                    cursor: 'pointer'
-                  }}
-                >
-                  Contact Details
+                  Contacts
                 </div>
                 <div
                   onClick={() => handleNavClick('CRM', undefined, 'companies')}
                   style={{
                     fontSize: '0.75rem',
-                    fontWeight: activeModule === 'CRM' && crmTab === 'companies' ? 700 : 400,
-                    color: activeModule === 'CRM' && crmTab === 'companies' ? 'var(--color-primary)' : '#64748B',
+                    fontWeight: activeModule === 'CRM' && (crmTab === 'companies' || crmTab === 'company-details') ? 700 : 400,
+                    color: activeModule === 'CRM' && (crmTab === 'companies' || crmTab === 'company-details') ? 'var(--color-primary)' : '#64748B',
                     padding: '0.3rem 0',
                     cursor: 'pointer'
                   }}
                 >
-                  Companies Grid
-                </div>
-                <div
-                  onClick={() => handleNavClick('CRM', undefined, 'company-details')}
-                  style={{
-                    fontSize: '0.75rem',
-                    fontWeight: activeModule === 'CRM' && crmTab === 'company-details' ? 700 : 400,
-                    color: activeModule === 'CRM' && crmTab === 'company-details' ? 'var(--color-primary)' : '#64748B',
-                    padding: '0.3rem 0',
-                    cursor: 'pointer'
-                  }}
-                >
-                  Company Details
+                  Companies
                 </div>
                 <div
                   onClick={() => handleNavClick('CRM', undefined, 'deals')}
                   style={{
                     fontSize: '0.75rem',
-                    fontWeight: activeModule === 'CRM' && crmTab === 'deals' ? 700 : 400,
-                    color: activeModule === 'CRM' && crmTab === 'deals' ? 'var(--color-primary)' : '#64748B',
+                    fontWeight: activeModule === 'CRM' && (crmTab === 'deals' || crmTab === 'deal-details') ? 700 : 400,
+                    color: activeModule === 'CRM' && (crmTab === 'deals' || crmTab === 'deal-details') ? 'var(--color-primary)' : '#64748B',
                     padding: '0.3rem 0',
                     cursor: 'pointer'
                   }}
                 >
-                  Deals Kanban
-                </div>
-                <div
-                  onClick={() => handleNavClick('CRM', undefined, 'deal-details')}
-                  style={{
-                    fontSize: '0.75rem',
-                    fontWeight: activeModule === 'CRM' && crmTab === 'deal-details' ? 700 : 400,
-                    color: activeModule === 'CRM' && crmTab === 'deal-details' ? 'var(--color-primary)' : '#64748B',
-                    padding: '0.3rem 0',
-                    cursor: 'pointer'
-                  }}
-                >
-                  Deal Details
+                  Deals
                 </div>
                 <div
                   onClick={() => handleNavClick('CRM', undefined, 'pipeline')}
@@ -393,7 +375,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     cursor: 'pointer'
                   }}
                 >
-                  Pipeline List
+                  Pipeline
                 </div>
                 <div
                   onClick={() => handleNavClick('CRM', undefined, 'activity')}
@@ -405,7 +387,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     cursor: 'pointer'
                   }}
                 >
-                  Activity List
+                  Activity
                 </div>
               </div>
             )}
@@ -483,38 +465,250 @@ export const Sidebar: React.FC<SidebarProps> = ({
           </div>
 
           {/* Finance */}
-          <div
-            className={`nav-item ${activeModule === 'Finance & Accounts' ? 'active' : ''}`}
-            onClick={() => handleNavClick('Finance & Accounts')}
-            style={{ cursor: 'pointer' }}
-          >
-            <Receipt size={18} className="nav-item-icon" />
+          <div>
+            <div
+              className={`nav-item ${activeModule === 'Finance & Accounts' ? 'active' : ''}`}
+              onClick={() => handleNavClick('Finance & Accounts', undefined, undefined, undefined, 'expenses')}
+              style={{ cursor: 'pointer' }}
+            >
+              <Receipt size={18} className="nav-item-icon" />
+              {!isCollapsed && (
+                <>
+                  <span style={{ flex: 1 }}>Finance</span>
+                  {pendingInvoices > 0 && <span className="badge badge-error">{pendingInvoices}</span>}
+                  <ChevronDown size={14} style={{ color: '#94A3B8' }} />
+                </>
+              )}
+            </div>
+
             {!isCollapsed && (
-              <>
-                <span style={{ flex: 1 }}>Finance (₹)</span>
-                {pendingInvoices > 0 && <span className="badge badge-error">{pendingInvoices}</span>}
-              </>
+              <div style={{ paddingLeft: '2.5rem', display: 'flex', flexDirection: 'column', gap: '0.2rem', marginTop: '0.2rem' }}>
+                <div
+                  onClick={() => handleNavClick('Finance & Accounts', undefined, undefined, undefined, 'expenses')}
+                  style={{
+                    fontSize: '0.75rem',
+                    fontWeight: activeModule === 'Finance & Accounts' && financeTab === 'expenses' ? 700 : 400,
+                    color: activeModule === 'Finance & Accounts' && financeTab === 'expenses' ? 'var(--color-primary)' : '#64748B',
+                    padding: '0.3rem 0',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Expenses
+                </div>
+                <div
+                  onClick={() => handleNavClick('Finance & Accounts', undefined, undefined, undefined, 'provident-fund')}
+                  style={{
+                    fontSize: '0.75rem',
+                    fontWeight: activeModule === 'Finance & Accounts' && financeTab === 'provident-fund' ? 700 : 400,
+                    color: activeModule === 'Finance & Accounts' && financeTab === 'provident-fund' ? 'var(--color-primary)' : '#64748B',
+                    padding: '0.3rem 0',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Provident Fund
+                </div>
+                <div
+                  onClick={() => handleNavClick('Finance & Accounts', undefined, undefined, undefined, 'payments')}
+                  style={{
+                    fontSize: '0.75rem',
+                    fontWeight: activeModule === 'Finance & Accounts' && financeTab === 'payments' ? 700 : 400,
+                    color: activeModule === 'Finance & Accounts' && financeTab === 'payments' ? 'var(--color-primary)' : '#64748B',
+                    padding: '0.3rem 0',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Payments
+                </div>
+                <div
+                  onClick={() => handleNavClick('Finance & Accounts', undefined, undefined, undefined, 'employee-salary')}
+                  style={{
+                    fontSize: '0.75rem',
+                    fontWeight: activeModule === 'Finance & Accounts' && financeTab === 'employee-salary' ? 700 : 400,
+                    color: activeModule === 'Finance & Accounts' && financeTab === 'employee-salary' ? 'var(--color-primary)' : '#64748B',
+                    padding: '0.3rem 0',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Employee Salary
+                </div>
+                <div
+                  onClick={() => handleNavClick('Finance & Accounts', undefined, undefined, undefined, 'payslip')}
+                  style={{
+                    fontSize: '0.75rem',
+                    fontWeight: activeModule === 'Finance & Accounts' && financeTab === 'payslip' ? 700 : 400,
+                    color: activeModule === 'Finance & Accounts' && financeTab === 'payslip' ? 'var(--color-primary)' : '#64748B',
+                    padding: '0.3rem 0',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Payslip
+                </div>
+                <div
+                  onClick={() => handleNavClick('Finance & Accounts', undefined, undefined, undefined, 'invoices')}
+                  style={{
+                    fontSize: '0.75rem',
+                    fontWeight: activeModule === 'Finance & Accounts' && financeTab === 'invoices' ? 700 : 400,
+                    color: activeModule === 'Finance & Accounts' && financeTab === 'invoices' ? 'var(--color-primary)' : '#64748B',
+                    padding: '0.3rem 0',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Invoices & Billing
+                </div>
+              </div>
             )}
           </div>
 
           {/* Recruitment */}
-          <div
-            className={`nav-item ${activeModule === 'Recruitment' ? 'active' : ''}`}
-            onClick={() => handleNavClick('Recruitment')}
-            style={{ cursor: 'pointer' }}
-          >
-            <UserCheck size={18} className="nav-item-icon" />
-            {!isCollapsed && <span>Recruitment</span>}
+          <div>
+            <div
+              className={`nav-item ${activeModule === 'Recruitment' ? 'active' : ''}`}
+              onClick={() => handleNavClick('Recruitment', undefined, undefined, undefined, undefined, 'jobs')}
+              style={{ cursor: 'pointer' }}
+            >
+              <UserCheck size={18} className="nav-item-icon" />
+              {!isCollapsed && (
+                <>
+                  <span style={{ flex: 1 }}>Recruitment</span>
+                  <ChevronDown size={14} style={{ color: '#94A3B8' }} />
+                </>
+              )}
+            </div>
+
+            {!isCollapsed && (
+              <div style={{ paddingLeft: '2.5rem', display: 'flex', flexDirection: 'column', gap: '0.2rem', marginTop: '0.2rem' }}>
+                <div
+                  onClick={() => handleNavClick('Recruitment', undefined, undefined, undefined, undefined, 'jobs')}
+                  style={{
+                    fontSize: '0.75rem',
+                    fontWeight: activeModule === 'Recruitment' && recruitmentTab === 'jobs' ? 700 : 400,
+                    color: activeModule === 'Recruitment' && recruitmentTab === 'jobs' ? 'var(--color-primary)' : '#64748B',
+                    padding: '0.3rem 0',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Jobs
+                </div>
+                <div
+                  onClick={() => handleNavClick('Recruitment', undefined, undefined, undefined, undefined, 'candidates')}
+                  style={{
+                    fontSize: '0.75rem',
+                    fontWeight: activeModule === 'Recruitment' && recruitmentTab === 'candidates' ? 700 : 400,
+                    color: activeModule === 'Recruitment' && recruitmentTab === 'candidates' ? 'var(--color-primary)' : '#64748B',
+                    padding: '0.3rem 0',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Candidates
+                </div>
+                <div
+                  onClick={() => handleNavClick('Recruitment', undefined, undefined, undefined, undefined, 'referrals')}
+                  style={{
+                    fontSize: '0.75rem',
+                    fontWeight: activeModule === 'Recruitment' && recruitmentTab === 'referrals' ? 700 : 400,
+                    color: activeModule === 'Recruitment' && recruitmentTab === 'referrals' ? 'var(--color-primary)' : '#64748B',
+                    padding: '0.3rem 0',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Referrals
+                </div>
+                <div
+                  onClick={() => handleNavClick('Recruitment', undefined, undefined, undefined, undefined, 'pipeline')}
+                  style={{
+                    fontSize: '0.75rem',
+                    fontWeight: activeModule === 'Recruitment' && recruitmentTab === 'pipeline' ? 700 : 400,
+                    color: activeModule === 'Recruitment' && recruitmentTab === 'pipeline' ? 'var(--color-primary)' : '#64748B',
+                    padding: '0.3rem 0',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Hiring Pipeline
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Reports */}
-          <div
-            className={`nav-item ${activeModule === 'Reports' ? 'active' : ''}`}
-            onClick={() => handleNavClick('Reports')}
-            style={{ cursor: 'pointer' }}
-          >
-            <BarChart3 size={18} className="nav-item-icon" />
-            {!isCollapsed && <span>Reports (₹)</span>}
+          <div>
+            <div
+              className={`nav-item ${activeModule === 'Reports' ? 'active' : ''}`}
+              onClick={() => handleNavClick('Reports', undefined, undefined, undefined, undefined, undefined, 'daily')}
+              style={{ cursor: 'pointer' }}
+            >
+              <BarChart3 size={18} className="nav-item-icon" />
+              {!isCollapsed && (
+                <>
+                  <span style={{ flex: 1 }}>Reports</span>
+                  <ChevronDown size={14} style={{ color: '#94A3B8' }} />
+                </>
+              )}
+            </div>
+
+            {!isCollapsed && (
+              <div style={{ paddingLeft: '2.5rem', display: 'flex', flexDirection: 'column', gap: '0.2rem', marginTop: '0.2rem' }}>
+                <div
+                  onClick={() => handleNavClick('Reports', undefined, undefined, undefined, undefined, undefined, 'daily')}
+                  style={{
+                    fontSize: '0.75rem',
+                    fontWeight: activeModule === 'Reports' && reportTab === 'daily' ? 700 : 400,
+                    color: activeModule === 'Reports' && reportTab === 'daily' ? 'var(--color-primary)' : '#64748B',
+                    padding: '0.3rem 0',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Daily Report
+                </div>
+                <div
+                  onClick={() => handleNavClick('Reports', undefined, undefined, undefined, undefined, undefined, 'payslip')}
+                  style={{
+                    fontSize: '0.75rem',
+                    fontWeight: activeModule === 'Reports' && reportTab === 'payslip' ? 700 : 400,
+                    color: activeModule === 'Reports' && reportTab === 'payslip' ? 'var(--color-primary)' : '#64748B',
+                    padding: '0.3rem 0',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Payslip Report
+                </div>
+                <div
+                  onClick={() => handleNavClick('Reports', undefined, undefined, undefined, undefined, undefined, 'leave')}
+                  style={{
+                    fontSize: '0.75rem',
+                    fontWeight: activeModule === 'Reports' && reportTab === 'leave' ? 700 : 400,
+                    color: activeModule === 'Reports' && reportTab === 'leave' ? 'var(--color-primary)' : '#64748B',
+                    padding: '0.3rem 0',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Leave Report
+                </div>
+                <div
+                  onClick={() => handleNavClick('Reports', undefined, undefined, undefined, undefined, undefined, 'attendance')}
+                  style={{
+                    fontSize: '0.75rem',
+                    fontWeight: activeModule === 'Reports' && reportTab === 'attendance' ? 700 : 400,
+                    color: activeModule === 'Reports' && reportTab === 'attendance' ? 'var(--color-primary)' : '#64748B',
+                    padding: '0.3rem 0',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Attendance Report
+                </div>
+                <div
+                  onClick={() => handleNavClick('Reports', undefined, undefined, undefined, undefined, undefined, 'employee')}
+                  style={{
+                    fontSize: '0.75rem',
+                    fontWeight: activeModule === 'Reports' && reportTab === 'employee' ? 700 : 400,
+                    color: activeModule === 'Reports' && reportTab === 'employee' ? 'var(--color-primary)' : '#64748B',
+                    padding: '0.3rem 0',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Employee Report
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Tickets */}

@@ -92,7 +92,7 @@ export const AuthPage: React.FC<{ onAuthenticated?: () => void }> = ({ onAuthent
         {/* Brand Logo */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.875rem' }}>
           <img
-            src="/logo.svg"
+            src="/logo.png"
             alt="Avi Designers"
             style={{
               height: '56px',

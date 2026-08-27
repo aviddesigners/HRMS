@@ -395,7 +395,7 @@ export const CRMPage: React.FC = () => {
       extraCount: '+1',
       contacts: [
         { name: 'Sharon Roy', avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80' },
-        { name: 'Amit Kumar', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80' }
+        { name: 'Amit Kumar', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80' }
       ]
     },
     {

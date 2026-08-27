@@ -30,6 +30,9 @@ import confetti from 'canvas-confetti';
 
 export type HRMTabType = 'employees' | 'attendance' | 'leaves' | 'designations';
 export type DashboardTabType = 'admin' | 'employee' | 'deals' | 'leads' | 'superadmin';
+export type FinanceTabType = 'expenses' | 'provident-fund' | 'payments' | 'employee-salary' | 'payslip' | 'invoices';
+export type RecruitmentTabType = 'jobs' | 'candidates' | 'referrals' | 'pipeline';
+export type ReportTabType = 'daily' | 'payslip' | 'leave' | 'attendance' | 'employee';
 export type CRMTabType =
   | 'clients'
   | 'contacts'
@@ -51,6 +54,12 @@ interface HRMSContextType {
   setHrmTab: (tab: HRMTabType) => void;
   crmTab: CRMTabType;
   setCrmTab: (tab: CRMTabType) => void;
+  financeTab: FinanceTabType;
+  setFinanceTab: (tab: FinanceTabType) => void;
+  recruitmentTab: RecruitmentTabType;
+  setRecruitmentTab: (tab: RecruitmentTabType) => void;
+  reportTab: ReportTabType;
+  setReportTab: (tab: ReportTabType) => void;
 
   // Search
   searchQuery: string;
@@ -122,6 +131,9 @@ export const HRMSProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [dashboardTab, setDashboardTab] = useState<DashboardTabType>('admin');
   const [hrmTab, setHrmTab] = useState<HRMTabType>('employees');
   const [crmTab, setCrmTab] = useState<CRMTabType>('clients');
+  const [financeTab, setFinanceTab] = useState<FinanceTabType>('expenses');
+  const [recruitmentTab, setRecruitmentTab] = useState<RecruitmentTabType>('jobs');
+  const [reportTab, setReportTab] = useState<ReportTabType>('daily');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [isSearchModalOpen, setIsSearchModalOpen] = useState<boolean>(false);
 
@@ -438,6 +450,12 @@ export const HRMSProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         setHrmTab,
         crmTab,
         setCrmTab,
+        financeTab,
+        setFinanceTab,
+        recruitmentTab,
+        setRecruitmentTab,
+        reportTab,
+        setReportTab,
         searchQuery,
         setSearchQuery,
         isSearchModalOpen,

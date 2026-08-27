@@ -18,7 +18,7 @@ export const mockUsers: User[] = [
     id: 'usr-1',
     name: 'Amit Kumar',
     email: 'amit.kumar@aviddesigners.com',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
     role: 'Super Admin',
     department: 'Executive Leadership',
     status: 'Active',
@@ -448,7 +448,7 @@ export const mockProjects: Project[] = [
     category: 'Web Development',
     leader: {
       name: 'Amit Kumar',
-      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
       role: 'Tech Director'
     },
     team: [
@@ -530,7 +530,7 @@ export const mockProjects: Project[] = [
     category: 'Consulting',
     leader: {
       name: 'Amit Kumar',
-      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
       role: 'Enterprise Architect'
     },
     team: [
@@ -574,7 +574,7 @@ export const mockLeads: Lead[] = [
     source: 'Website',
     assignedTo: {
       name: 'Amit Kumar',
-      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80'
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80'
     },
     probability: 60,
     expectedClose: '2026-10-01',
@@ -959,7 +959,7 @@ export const mockAuditLogs: AuditLog[] = [
   {
     id: 'log-2',
     user: 'Amit Kumar',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
     action: 'Created new project record',
     target: 'PRO-005 B2B Logistics Hub',
     timestamp: '2026-08-26 11:20:04',
@@ -989,7 +989,7 @@ export const mockAuditLogs: AuditLog[] = [
   {
     id: 'log-5',
     user: 'Amit Kumar',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
     action: 'Updated RBAC permissions for Project Managers',
     target: 'Module: Finance (View only)',
     timestamp: '2026-08-24 16:00:22',
